@@ -274,6 +274,28 @@
             font-weight: 700;
         }
 
+        .submissions-table {
+            background: var(--adm-card);
+            border: 1px solid var(--adm-line);
+            border-radius: 2px;
+            padding: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow-x: auto;
+        }
+
+        .submissions-table h3 {
+            color: var(--adm-black);
+            margin-bottom: 14px;
+            font-size: .85rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
         @media (max-width: 1000px) {
             .charts-container {
                 grid-template-columns: 1fr;
@@ -498,11 +520,31 @@
         </div>
     </div>
 
+    <section class="submissions-table">
+        <h3>Envíos de Formulario</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Mensaje</th>
+                    <th>Coche Solicitado</th>
+                    <th>Presupuesto</th>
+                </tr>
+            </thead>
+            <tbody id="submissionsBody">
+                <tr>
+                    <td colspan="5">Cargando envíos...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     <div class="footer">
         <p>Dashboard de Exportación de Coches | Datos actualizados: Marzo 2026</p>
     </div>
 
     <script src='/js/admin-auth.js'></script>
+    <script src="/js/admin-submissions.js"></script>
     <script>
         // Color palette
         const colors = {

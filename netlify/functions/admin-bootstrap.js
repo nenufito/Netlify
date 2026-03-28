@@ -45,6 +45,18 @@ exports.handler = async function handler(event) {
       );
     `;
 
+    await sql`
+      CREATE TABLE IF NOT EXISTS quote_requests (
+        id SERIAL PRIMARY KEY,
+        full_name TEXT NOT NULL,
+        email TEXT NOT NULL,
+        message TEXT,
+        car_model TEXT NOT NULL,
+        budget TEXT NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `;
+
     const existing = await sql`
       SELECT id FROM admin_users WHERE email = ${adminEmail} LIMIT 1;
     `;
