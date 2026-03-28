@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BMW M3 — Model</title>
+    <link rel="stylesheet" href="/css/bmwe30.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+
+    <section class="hero" id="hero" aria-label="Audi R8 hero video">
+
+        <video class="hero__video" autoplay muted loop playsinline>
+
+            <source src="/videos/m30trailer.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero__overlay">
+            <div class="hero__overlay-inner">
+                <p class="hero__kicker">German culture</p>
+
+                <h1 class="hero__title">BMW E30 M3</h1>
+
+                <p class="hero__subtitle">The definition of German engineering </p>
+
+                <a class="btn btn--primary hero__cta" href="/html/model.html">
+                    BACK TO MODELS →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero__shade" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section--light" id="ficha-tecnica" aria-label="Ficha técnica Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">TECHNICAL SPECIFICATIONS</h2>
+                <p class="section__lead">
+                    The BMW E30 M3 is powered by the legendary 2.3-liter naturally aspirated inline-four S14 engine,
+                    developed directly from BMW’s motorsport program. Producing up to 215 horsepower in its most
+                    powerful road-going versions, it is paired with a 5-speed manual transmission and rear-wheel drive.
+                </p>
+                <p class="section__lead">
+                    Engineered for homologation racing, the E30 M3 features a lightweight body, widened track, and a
+                    finely balanced chassis. Its precise steering, high-revving character, and mechanical purity deliver
+                    an engaging and focused driving experience that defines classic performance driving.
+                </p>
+            </header>
+
+
+            <div class="spec-grid">
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-1"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">ENGINE</h3>
+                        <p class="spec-card__text">2.3L Naturally Aspirated Inline-4 (S14) • High-revving
+                            motorsport-derived engine</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-2"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">POWER</h3>
+                        <p class="spec-card__text">Up to 215 HP • Linear power delivery • Naturally aspirated response
+                        </p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-3"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">GEARBOX</h3>
+                        <p class="spec-card__text">5-speed manual transmission • Precision mechanical shifting</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-4"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">DRIVETRAIN</h3>
+                        <p class="spec-card__text">Rear-wheel drive (RWD) • Performance-focused chassis setup</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--dark" id="acabados" aria-label="Acabados Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title section__title--light">ACABADOS</h2>
+                <p class="section__lead section__lead--light">
+                    Inside, the cabin reflects a driver-focused philosophy, with supportive sport seats, clear analog
+                    instrumentation, and minimal distractions. Quality materials and solid construction underline BMW’s
+                    engineering excellence, making the E30 M3 not only a racing legend but also a refined road car with
+                    enduring appeal.
+                </p>
+            </header>
+
+            <div class="finish-grid">
+
+                <a class="finish-tile finish-img-1" href="#">
+                    <span class="finish-tile__label">EXTERIOR</span>
+                    <span class="finish-tile__hint"></span>
+                </a>
+
+                <a class="finish-tile finish-img-2" href="/img/interior-r8.png">
+                    <span class="finish-tile__label">INTERIOR</span>
+                </a>
+
+                <a class="finish-tile finish-img-3" href="/img/detalles-r8.png">
+                    <span class="finish-tile__label">DETAILS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--light" aria-label="Sonido motor Audi R8">
+        <div class="container audio-cta">
+            <h2 class="section__title">ENGINE SOUND</h2>
+            <p class="section__lead">
+                Listen to the German roar now.
+            </p>
+
+
+            <button class="btn btn--primary" id="engineSoundBtn" type="button">
+                PLAY ENGINE SOUND →
+            </button>
+
+
+
+            <audio id="engineAudio" preload="none">
+                <source src="/audio/sound-e30.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+    </section>
+    <script src="/js/sound-r8.js"></script>
+
+</body>
+
+</html>

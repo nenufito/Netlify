@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pagani Zonda — Model</title>
+    <link rel="stylesheet" href="/css/pagani.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+
+    <section class="hero" id="hero" aria-label="Audi R8 hero video">
+
+        <video class="hero__video" autoplay muted loop playsinline>
+
+            <source src="/videos/paganitrailer.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero__overlay">
+            <div class="hero__overlay-inner">
+                <p class="hero__kicker">Mechanical Art in Its Purest Form</p>
+
+                <h1 class="hero__title">Pagani Zonda</h1>
+
+                <p class="hero__subtitle">Where Engineering Becomes Sculpture.</p>
+
+                <a class="btn btn--primary hero__cta" href="/html/model.html">
+                    BACK TO MODELS →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero__shade" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section--light" id="ficha-tecnica" aria-label="Ficha técnica Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">TECHNICAL SPECIFICATIONS</h2>
+                <p class="section__lead">
+                    The Pagani Zonda is powered by a naturally aspirated AMG-developed V12 engine, available in various
+                    displacements ranging from 6.0 to 7.3 liters, depending on the version. Output reaches up to 760
+                    horsepower, delivered exclusively to the rear wheels through a manual or automated manual
+                    transmission, emphasizing driver involvement and mechanical purity.
+                </p>
+                <p class="section__lead">
+                    Built around an ultra-lightweight carbon-fiber monocoque, the Zonda combines extreme rigidity with
+                    low weight. Its suspension, aerodynamics, and chassis tuning are engineered to deliver razor-sharp
+                    response, high-speed stability, and a visceral driving experience that prioritizes emotion, sound,
+                    and connection over digital intervention.
+                </p>
+            </header>
+
+
+            <div class="spec-grid">
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-1"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">ENGINE</h3>
+                        <p class="spec-card__text">6.0L / 7.3L Naturally Aspirated V12 • AMG-developed engine</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-2"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">POWER</h3>
+                        <p class="spec-card__text">Up to 760 HP • Naturally aspirated response • Pure mechanical sound
+                        </p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-3"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">GEARBOX</h3>
+                        <p class="spec-card__text">6-speed manual or automated manual • Driver-focused setup</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-4"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">DRIVETRAIN</h3>
+                        <p class="spec-card__text">Rear-wheel drive (RWD) • Lightweight carbon monocoque</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--dark" id="acabados" aria-label="Acabados Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title section__title--light">ACABADOS</h2>
+                <p class="section__lead section__lead--light">
+                    Inside, the cabin is entirely handcrafted, blending leather, aluminum, carbon fiber, and machined
+                    metal components. Each switch, dial, and control is milled from solid metal, reflecting Pagani’s
+                    dedication to tactile quality and timeless design. The result is an interior that feels more like a
+                    bespoke timepiece than a conventional car—exclusive, mechanical, and unforgettable.
+                </p>
+            </header>
+
+            <div class="finish-grid">
+
+                <a class="finish-tile finish-img-1" href="#">
+                    <span class="finish-tile__label">EXTERIOR</span>
+                    <span class="finish-tile__hint"></span>
+                </a>
+
+                <a class="finish-tile finish-img-2" href="#">
+                    <span class="finish-tile__label">INTERIOR</span>
+                </a>
+
+                <a class="finish-tile finish-img-3" href="#">
+                    <span class="finish-tile__label">DETAILS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--light" aria-label="Sonido motor Audi R8">
+        <div class="container audio-cta">
+            <h2 class="section__title">ENGINE SOUND</h2>
+            <p class="section__lead">
+                Play the sound of your new car whenever you want.
+            </p>
+
+
+            <button class="btn btn--primary" id="engineSoundBtn" type="button">
+                PLAY ENGINE SOUND →
+            </button>
+
+
+
+            <audio id="engineAudio" preload="none">
+                <source src="/audio/sound-pagani.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+    </section>
+    <script src="/js/sound-r8.js"></script>
+
+</body>
+
+</html>

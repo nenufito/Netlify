@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Audi R8 — Model</title>
+    <link rel="stylesheet" href="/css/audir8.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+
+    <section class="hero" id="hero" aria-label="Audi R8 hero video">
+
+        <video class="hero__video" autoplay muted loop playsinline>
+
+            <source src="/videos/r8trailer.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero__overlay">
+            <div class="hero__overlay-inner">
+                <p class="hero__kicker">the sound of happiness</p>
+
+                <h1 class="hero__title">AUDI R8</h1>
+
+                <p class="hero__subtitle">V10. QUATTRO. PURE PRESENCE.</p>
+
+                <a class="btn btn--primary hero__cta" href="/html/model.html">
+                    BACK TO MODELS →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero__shade" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section--light" id="ficha-tecnica" aria-label="Ficha técnica Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">TECHNICAL SPECIFICATIONS</h2>
+                <p class="section__lead">
+                    The Audi R8 gasoline engine range is available with a single engine option: a naturally aspirated
+                    5.2-liter V10 with dry sump lubrication and direct injection. It is available in two different power
+                    outputs, one with 570 hp and the other with 620 hp. The latter version corresponds to the Audi R8
+                    V10 Performance quattro, the most powerful model in the R8 range.
+                </p>
+                <p class="section__lead">
+                    In both cases, the engine can only be paired with a seven-speed S tronic dual-clutch gearbox.
+                    Quattro all-wheel drive is standard on all Audi R8 models and is one of the hallmarks of our
+                    supercar.
+                </p>
+            </header>
+
+
+            <div class="spec-grid">
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-1"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">ENGINE</h3>
+                        <p class="spec-card__text">5.2L V10 NA • Dry sump • Direct injection</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-2"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">POWER</h3>
+                        <p class="spec-card__text">570 CV / 620 CV (V10 Performance quattro)</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-3"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">GEARBOX</h3>
+                        <p class="spec-card__text">S tronic • Dual clutch • 7-speed</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-4"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">DRIVETRAIN</h3>
+                        <p class="spec-card__text">quattro AWD • Standard on all R8 models</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--dark" id="acabados" aria-label="Acabados Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title section__title--light">ACABADOS</h2>
+                <p class="section__lead section__lead--light">
+                    The exterior design of the Audi R8 stands out for its resemblance to the lines of a race car. The
+                    cabin
+                    is positioned far forward, and the powerful shape of the wheel arches and long
+                    rear end
+                    evoke the image of a race car.
+                </p>
+            </header>
+
+            <div class="finish-grid">
+
+                <a class="finish-tile finish-img-1" href="#">
+                    <span class="finish-tile__label">EXTERIOR</span>
+                    <span class="finish-tile__hint"></span>
+                </a>
+
+                <a class="finish-tile finish-img-2" href="#">
+                    <span class="finish-tile__label">INTERIOR</span>
+                </a>
+
+                <a class="finish-tile finish-img-3" href="#">
+                    <span class="finish-tile__label">DETAILS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--light" aria-label="Sonido motor Audi R8">
+        <div class="container audio-cta">
+            <h2 class="section__title">ENGINE SOUND</h2>
+            <p class="section__lead">
+                Play the sound of the V10 whenever you want.
+            </p>
+
+
+            <button class="btn btn--primary" id="engineSoundBtn" type="button">
+                PLAY ENGINE SOUND →
+            </button>
+
+
+
+            <audio id="engineAudio" preload="none">
+                <source src="/audio/sound-r8.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+    </section>
+    <script src="/js/sound-r8.js"></script>
+
+</body>
+
+</html>

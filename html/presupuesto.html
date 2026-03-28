@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request a Quote</title>
+
+    <link rel="stylesheet" href="/css/navbar2.css" />
+    <link rel="stylesheet" href="/css/work.css" />
+    <link rel="stylesheet" href="/css/presupuesto.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+    <div class="intro" id="intro">
+        <div class="intro__inner">
+            <img src="/img/minimalogo.png" alt="Nennu Cars" class="intro__logo">
+            <div class="intro__line"></div>
+        </div>
+    </div>
+
+    <header class="navbar" id="navbar">
+        <button class="nav-btn" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sideMenu">
+            <img class="menuicon" src="/img/menu.png" alt="Menu" />
+        </button>
+
+        <a class="brand" href="/index.html">
+            <img class="logo" src="/img/minimalogo.png" alt="Logo" />
+        </a>
+
+    </header>
+
+
+    <div class="menu-overlay" id="menuOverlay" hidden></div>
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+        <nav class="side-menu__nav" aria-label="Main menu">
+            <a href="/html/model.html" class="side-menu__link">Models</a>
+            <a href="#work-markets" class="side-menu__link">Markets</a>
+            <a href="#work-process" class="side-menu__link">How We Work</a>
+            <a href="#about-us" class="side-menu__link">Who We Are</a>
+            <a href="#history" class="side-menu__link">History</a>
+            <a href="#founder" class="side-menu__link">The Founder</a>
+            <a href="#reviews" class="side-menu__link">Reviews</a>
+            <a href="/html/contacto.html" class="side-menu__link">Contact</a>
+        </nav>
+    </aside>
+
+    <main id="contact">
+        <section class="contact-hero">
+            <div class="contact-hero__shade"></div>
+
+            <div class="contact-hero__content">
+                <p class="contact-hero__kicker">INTERNATIONAL VEHICLE EXPORT</p>
+                <h1 class="contact-hero__title">REQUEST A QUOTE</h1>
+                <p class="contact-hero__lead">
+                    Tell us what you’re looking for and where you want it delivered. We’ll get back with options and a
+                    clear quote.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="contact-section">
+            <div class="contact-container">
+
+                <form class="contact-form" name="quote" method="POST" data-netlify="true"
+                    data-netlify-honeypot="bot-field" action="/html/thank-you.html">
+                    <input type="hidden" name="form-name" value="quote" />
+                    <p style="display:none;">
+                        <label>Don’t fill this out: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="contact-card">
+                        <div class="contact-card__head">
+                            <h3 class="contact-card__title">Your details</h3>
+                            <p class="contact-card__hint">We’ll use this information to contact you.</p>
+                        </div>
+
+                        <div class="contact-grid">
+                            <div class="field">
+                                <label class="field__label" for="fullName">Full name</label>
+                                <input class="field__input" id="fullName" name="fullName" type="text"
+                                    placeholder="John Smith" required />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="email">Email</label>
+                                <input class="field__input" id="email" name="email" type="email"
+                                    placeholder="john@email.com" required />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="phone">Phone / WhatsApp</label>
+                                <input class="field__input" id="phone" name="phone" type="tel"
+                                    placeholder="+34 600 000 000" />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="destinationCountry">Destination country</label>
+                                <input class="field__input" id="destinationCountry" name="destinationCountry"
+                                    type="text" placeholder="Spain" required />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-card">
+                        <div class="contact-card__head">
+                            <h3 class="contact-card__title">Vehicle request</h3>
+                            <p class="contact-card__hint">What vehicle would you like us to source?</p>
+                        </div>
+
+                        <div class="contact-grid">
+                            <div class="field">
+                                <label class="field__label" for="brandModel">Brand & model</label>
+                                <input class="field__input" id="brandModel" name="brandModel" type="text"
+                                    placeholder="Audi RS6 / BMW M4 / Porsche 911" required />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="yearRange">Year range</label>
+                                <input class="field__input" id="yearRange" name="yearRange" type="text"
+                                    placeholder="2018 – 2024" />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="budget">Estimated budget</label>
+                                <input class="field__input" id="budget" name="budget" type="text" placeholder="€80,000"
+                                    required />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="timeline">Desired timeline</label>
+                                <select class="field__input" id="timeline" name="timeline">
+                                    <option value="asap">ASAP</option>
+                                    <option value="2-4weeks">2–4 weeks</option>
+                                    <option value="1-2months">1–2 months</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+
+                            <div class="field field--full">
+                                <label class="field__label" for="originMarket">Preferred origin market</label>
+                                <select class="field__input" id="originMarket" name="originMarket" required>
+                                    <option value="" disabled selected>Select a market</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="japan">Japan</option>
+                                    <option value="usa">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="no-preference">No preference</option>
+                                </select>
+                            </div>
+
+                            <div class="field field--full">
+                                <label class="field__label" for="requirements">
+                                    Requirements (mileage, spec, color, gearbox, etc.)
+                                </label>
+                                <textarea class="field__input field__textarea" id="requirements" name="requirements"
+                                    placeholder="Example: under 60,000 km, black exterior, carbon package, full service history..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-card">
+                        <div class="contact-card__head">
+                            <h3 class="contact-card__title">Logistics</h3>
+                            <p class="contact-card__hint">Delivery and transport preferences.</p>
+                        </div>
+
+                        <div class="contact-grid">
+                            <div class="field">
+                                <label class="field__label" for="deliveryCity">Delivery city</label>
+                                <input class="field__input" id="deliveryCity" name="deliveryCity" type="text"
+                                    placeholder="Madrid / Barcelona / Lisbon" />
+                            </div>
+
+                            <div class="field">
+                                <label class="field__label" for="transportType">Transport type</label>
+                                <select class="field__input" id="transportType" name="transportType">
+                                    <option value="enclosed">Enclosed transport (recommended)</option>
+                                    <option value="open">Open transport</option>
+                                    <option value="either">Either</option>
+                                </select>
+                            </div>
+
+                            <div class="field field--full">
+                                <label class="field__label" for="message">Additional notes</label>
+                                <textarea class="field__input field__textarea" id="message" name="message"
+                                    placeholder="Anything else we should know?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="contact-actions">
+                        <label class="check">
+                            <input class="check__box" type="checkbox" required />
+                            <span class="check__text">
+                                I confirm the information provided is accurate and agree to be contacted regarding this
+                                request.
+                            </span>
+                        </label>
+
+                        <div class="contact-actions__buttons">
+                            <button class="work-btn work-btn--primary" type="submit">
+                                SEND REQUEST →
+                            </button>
+                            <a class="work-btn work-btn--ghost" href="/index.html">
+                                BACK TO HOME →
+                            </a>
+                        </div>
+
+                        <p class="contact-fineprint">
+                            Typical response time: 24–48 business hours. We only work with verified suppliers and
+                            provide a
+                            clear quote before any purchase.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script>
+        window.addEventListener("load", () => {
+            const intro = document.getElementById("intro");
+
+            setTimeout(() => {
+                intro.classList.add("hide");
+            }, 2200);
+        });
+    </script>
+
+    <script src="/js/menu.js" defer></script>
+</body>
+
+</html>

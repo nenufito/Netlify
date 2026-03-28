@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelos</title>
+  <link rel="stylesheet" href="/css/navbar2.css">
+  <link rel="stylesheet" href="/css/model.css" />
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+  <div class="intro" id="intro">
+    <div class="intro__inner">
+      <img src="/img/minimalogo.png" alt="Nennu Cars" class="intro__logo">
+      <div class="intro__line"></div>
+    </div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <button class="nav-btn" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sideMenu">
+      <img class="menuicon" src="/img/menu.png" alt="">
+    </button>
+
+    <a class="brand" href="/index.html">
+      <img class="logo" src="/img/minimalogo.png" alt="Logo">
+    </a>
+
+
+  </header>
+
+
+  <div class="menu-overlay" id="menuOverlay" hidden></div>
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <nav class="side-menu__nav" aria-label="Main menu">
+      <a href="/html/model.html" class="side-menu__link">Models</a>
+      <a href="/index.html#work-markets" class="side-menu__link">Markets</a>
+      <a href="/index.html#work-process" class="side-menu__link">How We Work</a>
+      <a href="/index.html#about-us" class="side-menu__link">Who We Are</a>
+      <a href="/index.html" class="side-menu__link">History</a>
+      <a href="/index.html#founder" class="side-menu__link">The Founder</a>
+      <a href="/index.html#reviews" class="side-menu__link">Reviews</a>
+      <a href="/html/contacto.html" class="side-menu__link">Contact</a>
+    </nav>
+  </aside>
+
+
+  <main class="models">
+
+
+    <header class="topbar">
+      <h2 class="topbar__title">MODELOS</h2>
+
+      <a class="topbar__cta" href="#">
+        DESCUBRIR TODOS LOS MODELOS →
+      </a>
+    </header>
+
+    <section class="selector">
+
+      <button class="nav nav--left" id="prevBtn" aria-label="Anterior">
+        ‹
+      </button>
+
+      <div class="stage">
+
+        <h3 class="model-name" id="modelName"></h3>
+        <p class="model-tagline" id="modelTagline"></p>
+
+        <div class="cars">
+          <img class="car car--single" id="carCenter" src="" alt="" />
+        </div>
+
+        <div class="actions">
+          <a class="btn btn--primary" id="detailsBtn" href="#">
+            DISCOVER THE MODEL →
+          </a>
+
+          <a class="btn btn--ghost" id="brochureBtn" href="#">
+            GET A QUOTE ↓
+          </a>
+        </div>
+
+        <p class="fineprint" id="fineprint"></p>
+      </div>
+
+      <button class="nav nav--right" id="nextBtn" aria-label="Siguiente">
+        ›
+      </button>
+
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <img src="/img/minimalogo.png" alt="Nennu Cars Logo" class="footer-logo">
+        <p class="footer-tagline">
+          International vehicle export · Premium & performance cars
+        </p>
+      </div>
+
+      <nav class="footer-nav">
+        <p class="footer-title">Navigation</p>
+        <a href="/index.html#work-markets">Markets</a>
+        <a href="/index.html#work-process">How We Work</a>
+        <a href="/index.html#history">History</a>
+        <a href="/index.html#founder">The Founder</a>
+        <a href="/index.html#reviews">Reviews</a>
+        <a href="/html/presupuesto.html">Request a Quote</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-title">Contact</p>
+        <p>Email: <a href="mailto:contact@nennucars.com">gabrielmolina1@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/34612345678" target="_blank">+34 612 345 678</a></p>
+        <p class="footer-muted">Response time: 24–48 business hours</p>
+      </div>
+
+      <div class="footer-social">
+        <p class="footer-title">Follow</p>
+        <a href="https://instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/gabriel-molina-30a997391/" target="_blank">LinkedIn</a>
+        <a href="https://gabrielmolina.netlify.app/" target="_blank">Portfolio</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 NENNU CARS. All rights reserved.</p>
+      <p class="footer-legal">
+        <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  window.addEventListener("load", () => {
+    const intro = document.getElementById("intro");
+
+    setTimeout(() => {
+      intro.classList.add("hide");
+    }, 2200); 
+  });
+</script>
+
+  <script src="/js/model.js"></script>
+  <script src="/js/menu.js" defer></script>
+
+
+</body>
+
+</html>

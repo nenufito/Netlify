@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Mifuente';
+  src: url('/fonts/mifuent.eot'); 
+  src: url('/fonts/mifuent.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/fineday-style-two.woff2') format('woff2'),
+       url('/fonts/fineday-style-two.woff') format('woff');
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

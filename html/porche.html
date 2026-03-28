@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Porche GT3-RS — Model</title>
+    <link rel="stylesheet" href="/css/porche.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+
+    <section class="hero" id="hero" aria-label="Audi R8 hero video">
+
+        <video class="hero__video" autoplay muted loop playsinline>
+
+            <source src="/videos/porchetrailer.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero__overlay">
+            <div class="hero__overlay-inner">
+                <p class="hero__kicker">Born for the Racetrack</p>
+
+                <h1 class="hero__title">Porche GT3-RS</h1>
+
+                <p class="hero__subtitle">Precision Without Compromise.</p>
+
+                <a class="btn btn--primary hero__cta" href="/html/model.html">
+                    BACK TO MODELS →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero__shade" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section--light" id="ficha-tecnica" aria-label="Ficha técnica Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">TECHNICAL SPECIFICATIONS</h2>
+                <p class="section__lead">
+                    The Porsche 911 GT3 RS is engineered with one clear objective: maximum performance on track. It is
+                    powered by a high-revving naturally aspirated flat-six engine, producing 525 horsepower and capable
+                    of revving beyond 9,000 rpm. Power is delivered to the rear wheels through a 7-speed PDK dual-clutch
+                    transmission, ensuring lightning-fast gear changes and optimal lap times.
+                </p>
+                <p class="section__lead">
+                    Advanced aerodynamics play a central role in the GT3 RS’s performance, generating significant
+                    downforce through its active aero elements, wide bodywork, and large rear wing. Combined with a
+                    lightweight construction, race-derived suspension, and precision steering, the GT3 RS delivers
+                    exceptional grip, balance, and control under extreme driving conditions.
+                </p>
+            </header>
+
+
+            <div class="spec-grid">
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-1"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">ENGINE</h3>
+                        <p class="spec-card__text">4.0L Naturally Aspirated Flat-Six • High-revving motorsport engine
+                        </p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-2"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">POWER</h3>
+                        <p class="spec-card__text">525 HP • Instant throttle response • 9,000 rpm redline</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-3"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">GEARBOX</h3>
+                        <p class="spec-card__text">7-speed PDK dual-clutch transmission • Track-optimized shifts</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-4"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">DRIVETRAIN</h3>
+                        <p class="spec-card__text">Rear-wheel drive (RWD) • Advanced aero-focused chassis</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--dark" id="acabados" aria-label="Acabados Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title section__title--light">ACABADOS</h2>
+                <p class="section__lead section__lead--light">
+                    Inside, the cabin is stripped back and driver-focused, featuring carbon bucket seats, Alcantara
+                    surfaces, and minimal insulation to reduce weight. Digital displays and motorsport-inspired controls
+                    keep the driver fully connected to the car, creating an environment that prioritizes performance,
+                    precision, and pure driving engagement above all else.
+                </p>
+            </header>
+
+            <div class="finish-grid">
+
+                <a class="finish-tile finish-img-1" href="#">
+                    <span class="finish-tile__label">EXTERIOR</span>
+                    <span class="finish-tile__hint"></span>
+                </a>
+
+                <a class="finish-tile finish-img-2" href="#">
+                    <span class="finish-tile__label">INTERIOR</span>
+                </a>
+
+                <a class="finish-tile finish-img-3" href="#">
+                    <span class="finish-tile__label">DETAILS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--light" aria-label="Sonido motor Audi R8">
+        <div class="container audio-cta">
+            <h2 class="section__title">ENGINE SOUND</h2>
+            <p class="section__lead">
+                Play the sound of your new car whenever you want.
+            </p>
+
+
+            <button class="btn btn--primary" id="engineSoundBtn" type="button">
+                PLAY ENGINE SOUND →
+            </button>
+
+
+
+            <audio id="engineAudio" preload="none">
+                <source src="/audio/sound-porche.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+    </section>
+    <script src="/js/sound-r8.js"></script>
+
+</body>
+
+</html>

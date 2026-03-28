@@ -1,0 +1,12 @@
+{
+  "name": "luxury-cars-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.7.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

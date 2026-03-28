@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>G-wagon — Model</title>
+    <link rel="stylesheet" href="/css/g-wagon.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+
+    <section class="hero" id="hero" aria-label="Audi R8 hero video">
+
+        <video class="hero__video" autoplay muted loop playsinline>
+
+            <source src="/videos/g-wagotrailer.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero__overlay">
+            <div class="hero__overlay-inner">
+                <p class="hero__kicker">pure robustness</p>
+
+                <h1 class="hero__title">G-Wagon</h1>
+
+                <p class="hero__subtitle">the toughest 4x4.</p>
+
+                <a class="btn btn--primary hero__cta" href="/html/model.html">
+                    BACK TO MODELS →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero__shade" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section--light" id="ficha-tecnica" aria-label="Ficha técnica Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">TECHNICAL SPECIFICATIONS</h2>
+                <p class="section__lead">
+                    The Mercedes-Benz G-Class combines uncompromising off-road capability with modern high-performance
+                    engineering. Depending on the version, it is powered by a range of robust engines, including the
+                    iconic 4.0-liter twin-turbocharged V8, delivering impressive power and torque. Paired with an
+                    advanced automatic transmission and a permanent all-wheel-drive system, the G-Wagon offers confident
+                    performance on any terrain.
+                </p>
+                <p class="section__lead">
+                    Its ladder-frame construction, three locking differentials, and advanced suspension system ensure
+                    exceptional durability, traction, and control. Whether on asphalt or extreme off-road conditions,
+                    the G-Class delivers a unique balance of strength, stability, and refinement.
+                </p>
+            </header>
+
+
+            <div class="spec-grid">
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-1"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">ENGINE</h3>
+                        <p class="spec-card__text">4.0L Twin-Turbocharged V8 • Hand-built AMG engine</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-2"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">POWER</h3>
+                        <p class="spec-card__text">Up to 577 HP • Massive torque • Effortless performance</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-3"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">GEARBOX</h3>
+                        <p class="spec-card__text">9-speed automatic transmission • Smooth and robust shifting</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-4"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">DRIVETRAIN</h3>
+                        <p class="spec-card__text">All-wheel drive (AWD) • Three locking differentials</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--dark" id="acabados" aria-label="Acabados Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title section__title--light">ACABADOS</h2>
+                <p class="section__lead section__lead--light">
+                    Inside, the cabin offers a refined and luxurious environment, with premium leather upholstery,
+                    brushed aluminum or carbon fiber trims, and cutting-edge digital displays. Every element is
+                    carefully assembled to provide comfort, exclusivity, and a sense of timeless prestige, making the
+                    G-Class as impressive inside as it is unstoppable on the outside.
+                </p>
+            </header>
+
+            <div class="finish-grid">
+
+                <a class="finish-tile finish-img-1" href="#">
+                    <span class="finish-tile__label">EXTERIOR</span>
+                    <span class="finish-tile__hint"></span>
+                </a>
+
+                <a class="finish-tile finish-img-2" href="#">
+                    <span class="finish-tile__label">INTERIOR</span>
+                </a>
+
+                <a class="finish-tile finish-img-3" href="#">
+                    <span class="finish-tile__label">DETAILS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--light" aria-label="Sonido motor Audi R8">
+        <div class="container audio-cta">
+            <h2 class="section__title">ENGINE SOUND</h2>
+            <p class="section__lead">
+                Play the sound of a 4x4 whenever you want.
+            </p>
+
+
+            <button class="btn btn--primary" id="engineSoundBtn" type="button">
+                PLAY ENGINE SOUND →
+            </button>
+
+
+
+            <audio id="engineAudio" preload="none">
+                <source src="/audio/sound-gwagon.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+    </section>
+    <script src="/js/sound-r8.js"></script>
+
+</body>
+
+</html>

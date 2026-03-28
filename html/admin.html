@@ -1,0 +1,667 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ExportaciÃ³n Coches</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --adm-bg: #f3f3f3;
+            --adm-card: #ffffff;
+            --adm-black: #0a0a0a;
+            --adm-text: #111111;
+            --adm-muted: #6b6b6b;
+            --adm-line: #e9e9e9;
+            --adm-gold: #a8891a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            background: linear-gradient(180deg, #111111 0 190px, var(--adm-bg) 190px 100%);
+            color: var(--adm-text);
+            min-height: 100vh;
+            padding: 28px 20px 34px;
+        }
+
+        .header,
+        .kpi-container,
+        .charts-container,
+        .top-table,
+        .insights,
+        .footer {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 26px 20px 34px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            margin-bottom: 28px;
+        }
+
+        .header h1 {
+            color: #ffffff;
+            font-size: clamp(1.9rem, 3vw, 2.8rem);
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 12px;
+            font-size: .85rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .header-actions {
+            margin-top: 16px;
+        }
+
+        .header-actions button {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background: transparent;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: .09em;
+            font-size: .72rem;
+            font-weight: 800;
+            padding: 10px 14px;
+            cursor: pointer;
+        }
+
+        .header-actions button:hover {
+            border-color: var(--adm-gold);
+            color: var(--adm-gold);
+        }
+
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .kpi-card {
+            background: var(--adm-card);
+            border: 1px solid var(--adm-line);
+            border-radius: 2px;
+            padding: 22px;
+            text-align: center;
+            transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--adm-gold);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .kpi-card .value {
+            font-size: 2rem;
+            color: var(--adm-black);
+            font-weight: 900;
+            margin-bottom: 7px;
+            line-height: 1;
+        }
+
+        .kpi-card .label {
+            color: var(--adm-muted);
+            font-size: .76rem;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            font-weight: 800;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .chart-card {
+            background: var(--adm-card);
+            border: 1px solid var(--adm-line);
+            border-radius: 2px;
+            padding: 18px 18px 12px;
+        }
+
+        .chart-card h3 {
+            color: var(--adm-black);
+            margin-bottom: 14px;
+            font-size: .85rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        .top-table {
+            background: var(--adm-card);
+            border: 1px solid var(--adm-line);
+            border-radius: 2px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .top-table h3 {
+            color: var(--adm-black);
+            margin-bottom: 14px;
+            font-size: .85rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #111111;
+            color: #ffffff;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 800;
+            font-size: .74rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            border-bottom: 2px solid var(--adm-gold);
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--adm-line);
+            font-size: .92rem;
+            color: #2b2b2b;
+        }
+
+        tr:hover {
+            background: rgba(168, 137, 26, 0.08);
+        }
+
+        .payment-status {
+            display: inline-block;
+            padding: 5px 11px;
+            border-radius: 999px;
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .paid {
+            background: rgba(36, 144, 74, 0.12);
+            color: #1f7d41;
+            border: 1px solid rgba(31, 125, 65, 0.4);
+        }
+
+        .pending {
+            background: rgba(168, 137, 26, 0.14);
+            color: #8c6d10;
+            border: 1px solid rgba(140, 109, 16, 0.42);
+        }
+
+        .insights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+        }
+
+        .insight-card {
+            background: var(--adm-card);
+            border: 1px solid var(--adm-line);
+            border-radius: 2px;
+            padding: 18px;
+        }
+
+        .insight-card h4 {
+            color: var(--adm-black);
+            margin-bottom: 12px;
+            font-size: .8rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .insight-card ul {
+            list-style: none;
+        }
+
+        .insight-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--adm-line);
+            color: #3a3a3a;
+            font-size: .93rem;
+        }
+
+        .insight-card li:last-child {
+            border-bottom: none;
+        }
+
+        .insight-card li span {
+            color: var(--adm-gold);
+            font-weight: 800;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 22px;
+            margin-top: 24px;
+            border-top: 1px solid #d7d7d7;
+            color: #777777;
+            font-size: .8rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1000px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body {
+                padding: 18px 12px 24px;
+            }
+
+            .header h1 {
+                letter-spacing: .12em;
+            }
+
+            .top-table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1> ExportaciÃ³n de Coches</h1>
+        <p>Panel de Control | 40 Transacciones | 2025-2026</p>
+        <div class="header-actions">
+            <button id="adminLogoutBtn" type="button">Cerrar sesion</button>
+        </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <div class="value">â‚¬36.3M</div>
+            <div class="label">FacturaciÃ³n Total</div>
+        </div>
+        <div class="kpi-card">
+            <div class="value">40</div>
+            <div class="label">Transacciones</div>
+        </div>
+        <div class="kpi-card">
+            <div class="value">â‚¬907K</div>
+            <div class="label">Ticket Medio</div>
+        </div>
+        <div class="kpi-card">
+            <div class="value">â‚¬1.04M</div>
+            <div class="label">LogÃ­stica Total</div>
+        </div>
+        <div class="kpi-card">
+            <div class="value">35</div>
+            <div class="label">Pagos Completados</div>
+        </div>
+        <div class="kpi-card">
+            <div class="value">5</div>
+            <div class="label">Pagos Pendientes</div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts-container">
+        <div class="chart-card">
+            <h3>ðŸ“Š Ventas por Modelo</h3>
+            <div class="chart-wrapper">
+                <canvas id="modelChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3> Top PaÃ­ses Clientes</h3>
+            <div class="chart-wrapper">
+                <canvas id="countryChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3>ðŸ’° FacturaciÃ³n por Modelo</h3>
+            <div class="chart-wrapper">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <h3>ðŸ“… Ventas por Mes</h3>
+            <div class="chart-wrapper">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Transactions Table -->
+    <div class="top-table">
+        <h3>ðŸ† Top 10 Transacciones</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Modelo</th>
+                    <th>PaÃ­s</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Santiago FernÃ¡ndez</td>
+                    <td>Pagani Zonda</td>
+                    <td>Argentina</td>
+                    <td>â‚¬8,856,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Thabo Nkosi</td>
+                    <td>Pagani Zonda</td>
+                    <td>SudÃ¡frica</td>
+                    <td>â‚¬9,507,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Wei Zhang</td>
+                    <td>Bugatti Chiron</td>
+                    <td>China</td>
+                    <td>â‚¬4,216,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Pierre Dubois</td>
+                    <td>Bugatti Chiron</td>
+                    <td>Francia</td>
+                    <td>â‚¬4,072,000</td>
+                    <td><span class="payment-status pending">Pendiente</span></td>
+                </tr>
+                <tr>
+                    <td>Ahmet YÄ±lmaz</td>
+                    <td>Bugatti Chiron</td>
+                    <td>TurquÃ­a</td>
+                    <td>â‚¬3,877,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Dimitris Papadopoulos</td>
+                    <td>Ferrari F40</td>
+                    <td>Grecia</td>
+                    <td>â‚¬2,660,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Amina El Idrissi</td>
+                    <td>Ferrari F40</td>
+                    <td>Marruecos</td>
+                    <td>â‚¬2,663,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Lars Svensson</td>
+                    <td>Ferrari F40</td>
+                    <td>Suecia</td>
+                    <td>â‚¬2,440,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Nguyá»…n Minh Anh</td>
+                    <td>Porsche GT3 RS</td>
+                    <td>Vietnam</td>
+                    <td>â‚¬399,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+                <tr>
+                    <td>Rizky Pratama</td>
+                    <td>Porsche GT3 RS</td>
+                    <td>Indonesia</td>
+                    <td>â‚¬386,000</td>
+                    <td><span class="payment-status paid">Pagado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Insights -->
+    <div class="insights">
+        <div class="insight-card">
+            <h4>ðŸš˜ Modelos MÃ¡s Vendidos</h4>
+            <ul>
+                <li>BMW E30: <span>8 unidades</span></li>
+                <li>Audi R8: <span>7 unidades</span></li>
+                <li>G-Wagon: <span>6 unidades</span></li>
+                <li>Porsche GT3 RS: <span>6 unidades</span></li>
+                <li>Mercedes Evo II: <span>5 unidades</span></li>
+            </ul>
+        </div>
+
+        <div class="insight-card">
+            <h4>ðŸŒ Origen de Coches</h4>
+            <ul>
+                <li>Alemania: <span>6 coches</span></li>
+                <li>Italia: <span>6 coches</span></li>
+                <li>Suiza: <span>6 coches</span></li>
+                <li>Reino Unido: <span>5 coches</span></li>
+                <li>JapÃ³n: <span>4 coches</span></li>
+            </ul>
+        </div>
+
+        <div class="insight-card">
+            <h4>ðŸ’° FacturaciÃ³n por Modelo</h4>
+            <ul>
+                <li>Pagani Zonda: <span>â‚¬18.36M</span></li>
+                <li>Bugatti Chiron: <span>â‚¬12.17M</span></li>
+                <li>Ferrari F40: <span>â‚¬7.76M</span></li>
+                <li>Porsche GT3 RS: <span>â‚¬2.09M</span></li>
+                <li>Audi R8: <span>â‚¬1.85M</span></li>
+            </ul>
+        </div>
+
+        <div class="insight-card">
+            <h4>ðŸ“ˆ Insights Clave</h4>
+            <ul>
+                <li>Precio mÃ¡s alto: <span>â‚¬9.5M</span> (Pagani Zonda)</li>
+                <li>Precio mÃ¡s bajo: <span>â‚¬33K</span> (BMW E30)</li>
+                <li>LogÃ­stica promedio: <span>â‚¬26K</span> por venta</li>
+                <li>Tasa de conversiÃ³n: <span>87.5%</span> pagado</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Dashboard de ExportaciÃ³n de Coches | Datos actualizados: Marzo 2026</p>
+    </div>
+
+    <script src='/js/admin-auth.js'></script>
+    <script>
+        // Color palette
+        const colors = {
+            gold: '#a8891a',
+            goldLight: 'rgba(168, 137, 26, 0.75)',
+            goldDark: 'rgba(168, 137, 26, 0.28)',
+            white: '#ffffff',
+            gray: '#6b6b6b',
+            black: '#111111',
+            line: '#e9e9e9'
+        };
+
+        // Model Sales Chart
+        new Chart(document.getElementById('modelChart'), {
+            type: 'bar',
+            data: {
+                labels: ['BMW E30', 'Audi R8', 'G-Wagon', 'Porsche GT3', 'Mercedes Evo', 'Ferrari F40', 'Bugatti', 'Pagani'],
+                datasets: [{
+                    label: 'Unidades',
+                    data: [8, 7, 6, 6, 5, 3, 3, 2],
+                    backgroundColor: [
+                        colors.goldDark,
+                        'rgba(212, 175, 55, 0.5)',
+                        'rgba(212, 175, 55, 0.6)',
+                        'rgba(212, 175, 55, 0.7)',
+                        'rgba(212, 175, 55, 0.8)',
+                        'rgba(212, 175, 55, 0.85)',
+                        'rgba(212, 175, 55, 0.9)',
+                        colors.gold
+                    ],
+                    borderColor: colors.gold,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: colors.line },
+                        ticks: { color: colors.gray }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: colors.gray }
+                    }
+                }
+            }
+        });
+
+        // Country Chart
+        new Chart(document.getElementById('countryChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['EspaÃ±a', 'Alemania', 'Italia', 'Francia', 'Marruecos', 'Otros'],
+                datasets: [{
+                    data: [2, 2, 2, 1, 2, 31],
+                    backgroundColor: [
+                        colors.gold,
+                        'rgba(212, 175, 55, 0.85)',
+                        'rgba(212, 175, 55, 0.7)',
+                        'rgba(212, 175, 55, 0.55)',
+                        'rgba(212, 175, 55, 0.4)',
+                        'rgba(212, 175, 55, 0.25)'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { color: colors.black }
+                    }
+                }
+            }
+        });
+
+        // Revenue Chart
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Pagani', 'Bugatti', 'Ferrari', 'Porsche', 'Audi', 'G-Wagon', 'Mercedes', 'BMW'],
+                datasets: [{
+                    label: 'FacturaciÃ³n (Mâ‚¬)',
+                    data: [18.36, 12.17, 7.76, 2.09, 1.85, 1.37, 1.13, 0.28],
+                    backgroundColor: colors.goldDark,
+                    borderColor: colors.gold,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: colors.line },
+                        ticks: { color: colors.gray }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: colors.gray }
+                    }
+                }
+            }
+        });
+
+        // Monthly Chart
+        new Chart(document.getElementById('monthlyChart'), {
+            type: 'line',
+            data: {
+                labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
+                datasets: [{
+                    label: 'Ventas (â‚¬)',
+                    data: [624000, 510500, 963000, 0, 243000, 273000, 4456000, 577000, 788500, 3121000, 2603000, 3368000, 700000, 243000, 37900],
+                    borderColor: colors.gold,
+                    backgroundColor: colors.goldDark,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: colors.line },
+                        ticks: {
+                            color: colors.gray,
+                            callback: function (value) {
+                                return value >= 1000000 ? (value / 1000000) + 'M' : (value / 1000) + 'K';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: colors.gray }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+

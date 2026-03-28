@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request sent</title>
+  <link rel="stylesheet" href="/css/navbar2.css" />
+  <link rel="stylesheet" href="/css/work.css" />
+  <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+  <div class="intro" id="intro">
+    <div class="intro__inner">
+      <img src="/img/minimalogo.png" alt="Nennu Cars" class="intro__logo">
+      <div class="intro__line"></div>
+    </div>
+  </div>
+  <header class="navbar" id="navbar">
+    <a class="brand" href="/index.html">
+      <img class="logo" src="/img/minimalogo.png" alt="Logo" />
+    </a>
+  </header>
+
+  <main class="work-section work-section--light" style="padding-top:120px;">
+    <div class="work-container" style="text-align:center; max-width:900px;">
+      <h1 class="work-hero__title" style="color:#111;">THANK YOU</h1>
+      <p class="work-lead" style="max-width:760px; margin:0 auto;">
+        Your quote request has been received. We’ll contact you within 24–48 business hours with the next steps.
+      </p>
+
+      <div style="margin-top:18px;">
+        <a class="work-btn work-btn--primary" href="/index.html">BACK TO HOME →</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    window.addEventListener("load", () => {
+      const intro = document.getElementById("intro");
+
+      setTimeout(() => {
+        intro.classList.add("hide");
+      }, 2200);
+    });
+  </script>
+
+</body>
+
+</html>

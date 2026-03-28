@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ferrari F40 — Model</title>
+    <link rel="stylesheet" href="/css/f40.css" />
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+
+<body>
+
+
+    <section class="hero" id="hero" aria-label="Audi R8 hero video">
+
+        <video class="hero__video" autoplay muted loop playsinline>
+
+            <source src="/videos/f40trailer.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero__overlay">
+            <div class="hero__overlay-inner">
+                <p class="hero__kicker">Italian beauty</p>
+
+                <h1 class="hero__title">FERRARI F40</h1>
+
+                <p class="hero__subtitle">A V8 BITURBO PLAYING IN ARMONY .</p>
+
+                <a class="btn btn--primary hero__cta" href="/html/model.html">
+                    BACK TO MODELS →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero__shade" aria-hidden="true"></div>
+    </section>
+
+    <section class="section section--light" id="ficha-tecnica" aria-label="Ficha técnica Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title">TECHNICAL SPECIFICATIONS</h2>
+                <p class="section__lead">
+                    The Ferrari F40 is powered by a 2.9-liter twin-turbocharged V8, developed with direct inspiration
+                    from motorsport. It produces 478 horsepower, an astonishing figure for the late 1980s. Paired with a
+                    5-speed manual transmission and rear-wheel drive, it accelerates from 0 to 100 km/h in around 4
+                    seconds and reaches a top speed of over 320 km/h. With no electronic driving aids, the F40 delivers
+                    a raw, mechanical, and uncompromising driving experience.
+                </p>
+                <p class="section__lead">
+                    Its lightweight construction, aggressive aerodynamics, and precise mechanical setup deliver an
+                    intense and engaging driving experience. Every input is immediate and unfiltered, demanding skill
+                    and respect from the driver while rewarding them with a level of connection rarely found in modern
+                    supercars.
+                </p>
+            </header>
+
+
+            <div class="spec-grid">
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-1"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">ENGINE</h3>
+                        <p class="spec-card__text">2.9L Twin-Turbocharged V8 • Longitudinal layout • Mechanical fuel
+                            injection</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-2"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">POWER</h3>
+                        <p class="spec-card__text">478 HP • Pure analog power delivery • No electronic driving aids</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-3"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">GEARBOX</h3>
+                        <p class="spec-card__text">5-speed manual transmission • Classic gated shifter</p>
+                    </div>
+                </a>
+
+                <a class="spec-card" href="#">
+                    <div class="spec-card__media spec-img-4"></div>
+                    <div class="spec-card__body">
+                        <h3 class="spec-card__title">DRIVETRAIN</h3>
+                        <p class="spec-card__text">Rear-wheel drive (RWD) • Motorsport-inspired setup</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark" id="acabados" aria-label="Acabados Audi R8">
+        <div class="container">
+            <header class="section__header">
+                <h2 class="section__title section__title--light">ACABADOS</h2>
+                <p class="section__lead section__lead--light">
+                    The Ferrari F40’s finishes reflect a radical philosophy: performance above all else. Its bodywork is
+                    constructed from carbon fiber, Kevlar, and aluminum, designed purely for lightness and aerodynamic
+                    efficiency. The interior is intentionally minimalistic, featuring bucket seats, exposed surfaces,
+                    and an absence of unnecessary luxury. Every detail serves a purpose, reinforcing the F40’s identity
+                    as a road-legal race car and a true automotive icon.
+                </p>
+            </header>
+
+            <div class="finish-grid">
+                <a class="finish-tile finish-img-1" href="#">
+                    <span class="finish-tile__label">EXTERIOR</span>
+                    <span class="finish-tile__hint"></span>
+                </a>
+
+                <a class="finish-tile finish-img-2" href="#">
+                    <span class="finish-tile__label">INTERIOR</span>
+                </a>
+
+                <a class="finish-tile finish-img-3" href="#">
+                    <span class="finish-tile__label">DETAILS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section section--light" aria-label="Sonido motor Audi R8">
+        <div class="container audio-cta">
+            <h2 class="section__title">ENGINE SOUND</h2>
+            <p class="section__lead">
+                Play the sound of the V12 whenever you want.
+            </p>
+
+
+            <button class="btn btn--primary" id="engineSoundBtn" type="button">
+                PLAY ENGINE SOUND →
+            </button>
+
+
+
+            <audio id="engineAudio" preload="none">
+                <source src="/audio/sound-f40.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+    </section>
+
+    <script src="/js/sound-r8.js"></script>
+
+</body>
+
+</html>
