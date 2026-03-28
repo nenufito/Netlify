@@ -26,13 +26,13 @@
 
       var data = await response.json();
       if (!response.ok) {
-        setFeedback(data.error || "No se pudo iniciar sesion");
+        setFeedback(data.error || "No se pudo iniciar sesión");
         return;
       }
 
       window.location.href = "/admin";
     } catch (error) {
-      setFeedback("Error de conexion. Intentalo otra vez.");
+      setFeedback("Error de conexión. Inténtalo otra vez.");
     }
   });
 })();

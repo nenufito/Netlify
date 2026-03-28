@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard ExportaciÃ³n Coches</title>
+    <title>Dashboard Exportación Coches</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -298,30 +298,30 @@
 
 <body>
     <div class="header">
-        <h1> ExportaciÃ³n de Coches</h1>
+        <h1> Exportación de Coches</h1>
         <p>Panel de Control | 40 Transacciones | 2025-2026</p>
         <div class="header-actions">
-            <button id="adminLogoutBtn" type="button">Cerrar sesion</button>
+            <button id="adminLogoutBtn" type="button">Cerrar sesión</button>
         </div>
     </div>
 
     <!-- KPIs -->
     <div class="kpi-container">
         <div class="kpi-card">
-            <div class="value">â‚¬36.3M</div>
-            <div class="label">FacturaciÃ³n Total</div>
+            <div class="value">€36.3M</div>
+            <div class="label">Facturación Total</div>
         </div>
         <div class="kpi-card">
             <div class="value">40</div>
             <div class="label">Transacciones</div>
         </div>
         <div class="kpi-card">
-            <div class="value">â‚¬907K</div>
+            <div class="value">€907K</div>
             <div class="label">Ticket Medio</div>
         </div>
         <div class="kpi-card">
-            <div class="value">â‚¬1.04M</div>
-            <div class="label">LogÃ­stica Total</div>
+            <div class="value">€1.04M</div>
+            <div class="label">Logística Total</div>
         </div>
         <div class="kpi-card">
             <div class="value">35</div>
@@ -336,28 +336,28 @@
     <!-- Charts -->
     <div class="charts-container">
         <div class="chart-card">
-            <h3>ðŸ“Š Ventas por Modelo</h3>
+            <h3>Ventas por Modelo</h3>
             <div class="chart-wrapper">
                 <canvas id="modelChart"></canvas>
             </div>
         </div>
 
         <div class="chart-card">
-            <h3> Top PaÃ­ses Clientes</h3>
+            <h3>Top Países Clientes</h3>
             <div class="chart-wrapper">
                 <canvas id="countryChart"></canvas>
             </div>
         </div>
 
         <div class="chart-card">
-            <h3>ðŸ’° FacturaciÃ³n por Modelo</h3>
+            <h3>Facturación por Modelo</h3>
             <div class="chart-wrapper">
                 <canvas id="revenueChart"></canvas>
             </div>
         </div>
 
         <div class="chart-card">
-            <h3>ðŸ“… Ventas por Mes</h3>
+            <h3>Ventas por Mes</h3>
             <div class="chart-wrapper">
                 <canvas id="monthlyChart"></canvas>
             </div>
@@ -366,86 +366,86 @@
 
     <!-- Top Transactions Table -->
     <div class="top-table">
-        <h3>ðŸ† Top 10 Transacciones</h3>
+        <h3>Top 10 Transacciones</h3>
         <table>
             <thead>
                 <tr>
                     <th>Cliente</th>
                     <th>Modelo</th>
-                    <th>PaÃ­s</th>
+                    <th>País</th>
                     <th>Total</th>
                     <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Santiago FernÃ¡ndez</td>
+                    <td>Santiago Fernández</td>
                     <td>Pagani Zonda</td>
                     <td>Argentina</td>
-                    <td>â‚¬8,856,000</td>
+                    <td>€8,856,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Thabo Nkosi</td>
                     <td>Pagani Zonda</td>
-                    <td>SudÃ¡frica</td>
-                    <td>â‚¬9,507,000</td>
+                    <td>Sudáfrica</td>
+                    <td>€9,507,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Wei Zhang</td>
                     <td>Bugatti Chiron</td>
                     <td>China</td>
-                    <td>â‚¬4,216,000</td>
+                    <td>€4,216,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Pierre Dubois</td>
                     <td>Bugatti Chiron</td>
                     <td>Francia</td>
-                    <td>â‚¬4,072,000</td>
+                    <td>€4,072,000</td>
                     <td><span class="payment-status pending">Pendiente</span></td>
                 </tr>
                 <tr>
-                    <td>Ahmet YÄ±lmaz</td>
+                    <td>Ahmet Yılmaz</td>
                     <td>Bugatti Chiron</td>
-                    <td>TurquÃ­a</td>
-                    <td>â‚¬3,877,000</td>
+                    <td>Turquía</td>
+                    <td>€3,877,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Dimitris Papadopoulos</td>
                     <td>Ferrari F40</td>
                     <td>Grecia</td>
-                    <td>â‚¬2,660,000</td>
+                    <td>€2,660,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Amina El Idrissi</td>
                     <td>Ferrari F40</td>
                     <td>Marruecos</td>
-                    <td>â‚¬2,663,000</td>
+                    <td>€2,663,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Lars Svensson</td>
                     <td>Ferrari F40</td>
                     <td>Suecia</td>
-                    <td>â‚¬2,440,000</td>
+                    <td>€2,440,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
-                    <td>Nguyá»…n Minh Anh</td>
+                    <td>Nguyễn Minh Anh</td>
                     <td>Porsche GT3 RS</td>
                     <td>Vietnam</td>
-                    <td>â‚¬399,000</td>
+                    <td>€399,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
                 <tr>
                     <td>Rizky Pratama</td>
                     <td>Porsche GT3 RS</td>
                     <td>Indonesia</td>
-                    <td>â‚¬386,000</td>
+                    <td>€386,000</td>
                     <td><span class="payment-status paid">Pagado</span></td>
                 </tr>
             </tbody>
@@ -455,7 +455,7 @@
     <!-- Insights -->
     <div class="insights">
         <div class="insight-card">
-            <h4>ðŸš˜ Modelos MÃ¡s Vendidos</h4>
+            <h4>Modelos Más Vendidos</h4>
             <ul>
                 <li>BMW E30: <span>8 unidades</span></li>
                 <li>Audi R8: <span>7 unidades</span></li>
@@ -466,40 +466,40 @@
         </div>
 
         <div class="insight-card">
-            <h4>ðŸŒ Origen de Coches</h4>
+            <h4>Origen de Coches</h4>
             <ul>
                 <li>Alemania: <span>6 coches</span></li>
                 <li>Italia: <span>6 coches</span></li>
                 <li>Suiza: <span>6 coches</span></li>
                 <li>Reino Unido: <span>5 coches</span></li>
-                <li>JapÃ³n: <span>4 coches</span></li>
+                <li>Japón: <span>4 coches</span></li>
             </ul>
         </div>
 
         <div class="insight-card">
-            <h4>ðŸ’° FacturaciÃ³n por Modelo</h4>
+            <h4>Facturación por Modelo</h4>
             <ul>
-                <li>Pagani Zonda: <span>â‚¬18.36M</span></li>
-                <li>Bugatti Chiron: <span>â‚¬12.17M</span></li>
-                <li>Ferrari F40: <span>â‚¬7.76M</span></li>
-                <li>Porsche GT3 RS: <span>â‚¬2.09M</span></li>
-                <li>Audi R8: <span>â‚¬1.85M</span></li>
+                <li>Pagani Zonda: <span>€18.36M</span></li>
+                <li>Bugatti Chiron: <span>€12.17M</span></li>
+                <li>Ferrari F40: <span>€7.76M</span></li>
+                <li>Porsche GT3 RS: <span>€2.09M</span></li>
+                <li>Audi R8: <span>€1.85M</span></li>
             </ul>
         </div>
 
         <div class="insight-card">
-            <h4>ðŸ“ˆ Insights Clave</h4>
+            <h4>Insights Clave</h4>
             <ul>
-                <li>Precio mÃ¡s alto: <span>â‚¬9.5M</span> (Pagani Zonda)</li>
-                <li>Precio mÃ¡s bajo: <span>â‚¬33K</span> (BMW E30)</li>
-                <li>LogÃ­stica promedio: <span>â‚¬26K</span> por venta</li>
-                <li>Tasa de conversiÃ³n: <span>87.5%</span> pagado</li>
+                <li>Precio más alto: <span>€9.5M</span> (Pagani Zonda)</li>
+                <li>Precio más bajo: <span>€33K</span> (BMW E30)</li>
+                <li>Logística promedio: <span>€26K</span> por venta</li>
+                <li>Tasa de conversión: <span>87.5%</span> pagado</li>
             </ul>
         </div>
     </div>
 
     <div class="footer">
-        <p>Dashboard de ExportaciÃ³n de Coches | Datos actualizados: Marzo 2026</p>
+        <p>Dashboard de Exportación de Coches | Datos actualizados: Marzo 2026</p>
     </div>
 
     <script src='/js/admin-auth.js'></script>
@@ -561,7 +561,7 @@
         new Chart(document.getElementById('countryChart'), {
             type: 'doughnut',
             data: {
-                labels: ['EspaÃ±a', 'Alemania', 'Italia', 'Francia', 'Marruecos', 'Otros'],
+                labels: ["España", "Alemania", "Italia", "Francia", "Marruecos", "Otros"],
                 datasets: [{
                     data: [2, 2, 2, 1, 2, 31],
                     backgroundColor: [
@@ -594,7 +594,7 @@
             data: {
                 labels: ['Pagani', 'Bugatti', 'Ferrari', 'Porsche', 'Audi', 'G-Wagon', 'Mercedes', 'BMW'],
                 datasets: [{
-                    label: 'FacturaciÃ³n (Mâ‚¬)',
+                    label: "Facturación (M€)",
                     data: [18.36, 12.17, 7.76, 2.09, 1.85, 1.37, 1.13, 0.28],
                     backgroundColor: colors.goldDark,
                     borderColor: colors.gold,
@@ -628,7 +628,7 @@
             data: {
                 labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
                 datasets: [{
-                    label: 'Ventas (â‚¬)',
+                    label: "Ventas (€)",
                     data: [624000, 510500, 963000, 0, 243000, 273000, 4456000, 577000, 788500, 3121000, 2603000, 3368000, 700000, 243000, 37900],
                     borderColor: colors.gold,
                     backgroundColor: colors.goldDark,
@@ -664,4 +664,3 @@
 </body>
 
 </html>
-
